@@ -4,6 +4,7 @@ stage2:
   test_data_path: "" # your data directory path
   ckpt_path: "../outputs/stage1_train/aspect.pth"      # q_view + cross_attn
   prefix_ckpt_path: "../outputs/stage2_train/soft_prompt_emotion6.pt"  # trained soft prompt
+  router_ckpt_path: "../outputs/stage2_train/router_fusion_emotion6.pth"  # trained router + fusion
   prompt_json_path: "../config/prompts/prompts.json" 
   eval_max_new_tokens: 4
   VIEW_NAMES:

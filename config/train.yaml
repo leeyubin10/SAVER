@@ -41,3 +41,4 @@ stage2:
   learning_rate: 5.0e-5                                  
   output_dir: "outputs/stage2_train"
   output_path: "outputs/stage2_train/soft_prompt_emotion6.pt"  
+  router_ckpt_path: "outputs/stage2_train/router_fusion_emotion6.pth"

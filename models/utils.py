@@ -158,7 +158,8 @@ def save_router_fusion_ckpt(spmodel, save_path):
     ckpt = {
         "q_view": {k: v.detach().cpu() for k, v in spmodel.q_view.items()},
         "cross_attn": {k: v.state_dict() for k, v in spmodel.cross_attn.items()},
-        "fusion": spmodel.fusion.state_dict() if hasattr(spmodel, "fusion") else None
+        "fusion": spmodel.fusion.state_dict() if hasattr(spmodel, "fusion") else None,
+        "router": spmodel.router.state_dict() if hasattr(spmodel, "router") else None
     }
 
     torch.save(ckpt, save_path)

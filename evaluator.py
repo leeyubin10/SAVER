@@ -157,6 +157,9 @@ def evaluate_stage2(config):
 
     # 2) Build Stage 2 model and processor (with Stage 1 weights loaded)
     spmodel, processor = build_stage2_model(config)
+    router_ckpt = torch.load(config["router_ckpt_path"], map_location="cpu")
+    spmodel.router.load_state_dict(router_ckpt["router"])
+    spmodel.fusion.load_state_dict(router_ckpt["fusion"])
     device = get_model_device(spmodel)
     spmodel.to(device)
     spmodel.eval()

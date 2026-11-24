@@ -81,6 +81,8 @@ def main():
             num_special_tokens_in_prefix=num_prefix,
             save_ckpt=train_config["output_path"],
         )
+        # Save trained router + fusion weights
+        save_router_fusion_ckpt(saver_model, train_config["router_ckpt_path"])
         hook_handle.remove()
 
 
